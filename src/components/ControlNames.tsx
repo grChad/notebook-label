@@ -11,7 +11,8 @@ import { backgroundNames, sizeNames } from '../utils/dataForNames'
 
 // import components
 import InputText from './InputText'
-import { IconText, IconPainText, IconTextSize } from './IconsSVG'
+import SelectSize from './SelectSize'
+import { IconText, IconBrush, IconTextSize } from './IconsSVG'
 
 export default function ControlNames() {
 	const storeNames = useAppSelector((state) => state.storeNames)
@@ -44,7 +45,7 @@ export default function ControlNames() {
 				<InputText name={storeNames.surnames} changeName={handleChangeSurnames} />
 			</div>
 			<div className="flex flex-row justify-center items-center gap-1">
-				<IconPainText size={18} />
+				<IconBrush size={18} />
 				<select
 					onChange={handleChangeColor}
 					value={storeNames.background}
@@ -68,23 +69,11 @@ export default function ControlNames() {
 			</div>
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconTextSize size={21} />
-				<select
-					onChange={handleChangeSize}
-					value={storeNames.size}
-					style={{
-						textAlign: 'center',
-						borderRadius: 5,
-						padding: '3px 1rem',
-						height: 'var(--heightItems)',
-						border: '1px solid var(--color-gray-300)',
-					}}
-				>
-					{sizeNames.map((item) => (
-						<option key={item.size} value={item.size}>
-							{item.size}
-						</option>
-					))}
-				</select>
+				<SelectSize
+					size={storeNames.size}
+					handleChangeSize={handleChangeSize}
+					dateList={sizeNames}
+				/>
 			</div>
 		</>
 	)
