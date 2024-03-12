@@ -1,11 +1,21 @@
 interface Props {
 	size?: number
 }
+
 export const IconPainText: React.FC<Props> = ({ size = 20 }) => {
 	return (
 		<svg width={size} height={size} viewBox="0 0 576 512" fill="var(--color-surface)">
 			<title>color de texto</title>
 			<path d="M339.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L568.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S517.7-4.4 499.1 9.6L262.4 187.2c-24 18-38.2 46.1-38.4 76.1L339.3 367.1zm-19.6 25.4l-116-104.4C143.9 290.3 96 339.6 96 400c0 3.9 .2 7.8 .6 11.6C98.4 429.1 86.4 448 68.8 448H64c-17.7 0-32 14.3-32 32s14.3 32 32 32H208c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z" />
+		</svg>
+	)
+}
+
+export const IconBrush: React.FC<Props> = ({ size = 20 }) => {
+	return (
+		<svg width={size} height={size} viewBox="0 0 384 512" fill="var(--color-surface)">
+			<title>color de fondo</title>
+			<path d="M162.4 6c-1.5-3.6-5-6-8.9-6h-19c-3.9 0-7.5 2.4-8.9 6L104.9 57.7c-3.2 8-14.6 8-17.8 0L66.4 6c-1.5-3.6-5-6-8.9-6H48C21.5 0 0 21.5 0 48V224v22.4V256H9.6 374.4 384v-9.6V224 48c0-26.5-21.5-48-48-48H230.5c-3.9 0-7.5 2.4-8.9 6L200.9 57.7c-3.2 8-14.6 8-17.8 0L162.4 6zM0 288v32c0 35.3 28.7 64 64 64h64v64c0 35.3 28.7 64 64 64s64-28.7 64-64V384h64c35.3 0 64-28.7 64-64V288H0zM192 432a16 16 0 1 1 0 32 16 16 0 1 1 0-32z" />
 		</svg>
 	)
 }
@@ -27,14 +37,6 @@ export const IconText: React.FC<Props> = ({ size = 20 }) => {
 		</svg>
 	)
 }
-
-// export const IconSortDown = () => {
-// 	return (
-// 		<svg viewBox="0 0 320 512" fill="currentColor">
-// 			<path d="M182.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128z" />
-// 		</svg>
-// 	)
-// }
 
 export const IconTextSize: React.FC<Props> = ({ size = 20 }) => {
 	return (
