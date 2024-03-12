@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 // import Image
-import Image from '../assets/matematica.webp'
+import Logo from '../assets/scorza03.png'
 
-export default function CoverImage() {
+export default function ViewLogo() {
 	const [isHovered, setIsHovered] = useState(false)
 
 	return (
@@ -13,16 +13,15 @@ export default function CoverImage() {
 			onMouseLeave={() => setIsHovered(false)}
 			style={{ ...styles.button, ...(isHovered && { borderColor: '#D3D3D3' }) }}
 		>
-			<img style={styles.image} src={Image} alt="cover" />
+			<img style={styles.image} src={Logo} alt="marianista" />
 		</button>
 	)
 }
 
 const styles = {
 	button: {
-		width: 270,
-		height: 270,
-		overflow: 'hidden',
+		width: 80,
+		height: 80,
 	},
 	image: {
 		width: '100%',

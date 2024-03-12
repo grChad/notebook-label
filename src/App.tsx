@@ -1,12 +1,11 @@
 import './styles/global.css'
 
 // import components
+import BarrControl from './components/BarrControl'
+import ViewLogo from './components/ViewLogo'
 import ViewCurse from './components/ViewCurse'
 import ViewNames from './components/ViewNames'
-import BarrControl from './components/BarrControl'
-
-import SchoolLogo from './components/SchoolLogo'
-import CoverImage from './components/CoverImage'
+import ViewCoverImage from './components/ViewCoverImage'
 
 function App() {
 	return (
@@ -19,7 +18,7 @@ function App() {
           border-8 border-sky-500 p-4"
 				>
 					<div className="grid grid-cols-[80px_1fr] gap-4">
-						<SchoolLogo />
+						<ViewLogo />
 						<ViewCurse />
 					</div>
 
@@ -28,7 +27,7 @@ function App() {
 							<ViewNames />
 							<p className="text-3xl font-bold">Aula: Perú</p>
 						</div>
-						<CoverImage />
+						<ViewCoverImage />
 					</div>
 				</div>
 			</div>
