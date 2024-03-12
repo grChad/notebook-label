@@ -1,13 +1,16 @@
+// NOTE: Global State
 import { useAppSelector, useAppDispatch } from '../hooks/store'
 import { renameCurse, changeColor, changeSize } from '../../store/user/curseSlice'
 
+// NOTE: function and data
 import { capitalize } from '../utils/functions'
 import { colorTextCurse, sizeCurse } from '../utils/dataForCurse'
 
 // import components
-import { IconText, IconPainText, IconTextSize } from './IconsSVG'
 import InputText from './InputText'
 import SelectSize from './SelectSize'
+import SelectColor from './SelectColor'
+import { IconText, IconPainText, IconTextSize } from './IconsSVG'
 
 export default function ControlsCurse() {
 	const storeCurse = useAppSelector((state) => state.storeCurse)
@@ -34,29 +37,16 @@ export default function ControlsCurse() {
 				<IconText size={18} />
 				<InputText name={storeCurse.curse} changeName={changeCurse} />
 			</div>
+
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconPainText size={18} />
-				<select
-					onChange={handleChangeColor}
-					value={storeCurse.color}
-					style={{
-						width: 100,
-						textAlign: 'center',
-						backgroundColor: `${storeCurse.color}`,
-						borderRadius: 5,
-						padding: '3px 1rem',
-						height: 'var(--heightItems)',
-						maxHeight: 40,
-						overflowY: 'auto',
-					}}
-				>
-					{colorTextCurse.map((item) => (
-						<option key={item.id} value={item.color}>
-							{item.name}
-						</option>
-					))}
-				</select>
+				<SelectColor
+					handleChangeColor={handleChangeColor}
+					color={storeCurse.color}
+					dateList={colorTextCurse}
+				/>
 			</div>
+
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconTextSize size={21} />
 				<SelectSize

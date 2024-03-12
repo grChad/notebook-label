@@ -1,3 +1,4 @@
+// NOTE: Global State
 import { useAppSelector, useAppDispatch } from '../hooks/store'
 import {
 	renameNames,
@@ -6,12 +7,14 @@ import {
 	changeSize,
 } from '../../store/user/namesSlice'
 
+// NOTE: function and data
 import { capitalize } from '../utils/functions'
 import { backgroundNames, sizeNames } from '../utils/dataForNames'
 
 // import components
 import InputText from './InputText'
 import SelectSize from './SelectSize'
+import SelectColor from './SelectColor'
 import { IconText, IconBrush, IconTextSize } from './IconsSVG'
 
 export default function ControlNames() {
@@ -44,29 +47,16 @@ export default function ControlNames() {
 				<InputText name={storeNames.names} changeName={handleChangeNames} />
 				<InputText name={storeNames.surnames} changeName={handleChangeSurnames} />
 			</div>
+
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconBrush size={18} />
-				<select
-					onChange={handleChangeColor}
-					value={storeNames.background}
-					style={{
-						width: 100,
-						textAlign: 'center',
-						backgroundColor: `${storeNames.background}`,
-						borderRadius: 5,
-						padding: '3px 1rem',
-						height: 'var(--heightItems)',
-						maxHeight: 40,
-						overflowY: 'auto',
-					}}
-				>
-					{backgroundNames.map((item) => (
-						<option key={item.id} value={item.color}>
-							{item.name}
-						</option>
-					))}
-				</select>
+				<SelectColor
+					handleChangeColor={handleChangeColor}
+					color={storeNames.background}
+					dateList={backgroundNames}
+				/>
 			</div>
+
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconTextSize size={21} />
 				<SelectSize
