@@ -1,0 +1,16 @@
+.barUp {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--color-surface);
+  border-radius: 5px;
+  margin: 0.5rem;
+  padding: 5px 1rem;
+  background-color: var(--color-gray);
+}
