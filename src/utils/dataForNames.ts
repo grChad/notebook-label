@@ -1,4 +1,6 @@
-export const dataNamesDefault = {
+import type { DataNamesDefault, ListColorText, ListSizeText } from './types'
+
+export const dataNamesDefault: DataNamesDefault = {
 	nameSlice: 'names',
 	names: 'Juan Carlos',
 	surnames: 'García Rodríguez',
@@ -6,7 +8,7 @@ export const dataNamesDefault = {
 	size: 26,
 }
 
-export const backgroundNames = [
+export const backgroundNames: ListColorText[] = [
 	{ id: crypto.randomUUID(), name: 'stone', color: '#d6d3d188' },
 	{ id: crypto.randomUUID(), name: 'red', color: '#fca5a588' },
 	{ id: crypto.randomUUID(), name: 'orange', color: '#fdba7488' },
@@ -22,7 +24,7 @@ export const backgroundNames = [
 	{ id: crypto.randomUUID(), name: 'rose', color: '#fda4af88' },
 ]
 
-export const sizeNames = [
+export const sizeNames: ListSizeText[] = [
 	{ size: 22 },
 	{ size: 24 },
 	{ size: 26 },
