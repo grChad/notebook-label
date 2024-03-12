@@ -1,11 +1,9 @@
-interface DateList {
-	size: number
-}
+import { ListSizeText } from '../utils/types'
 
 interface Props {
 	size: number
 	handleChangeSize: (event: React.ChangeEvent<HTMLSelectElement>) => void
-	dateList: DateList[]
+	dateList: ListSizeText[]
 }
 
 export const SelectSize: React.FC<Props> = ({ size, handleChangeSize, dateList }) => {
