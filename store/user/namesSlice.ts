@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { backgroundDefault } from '../../src/utils/selectColors'
+import { dataNamesDefault as Data } from '../../src/utils/dataForNames'
 
 export interface User {
 	names: string
@@ -9,14 +9,14 @@ export interface User {
 }
 
 const initialState: User = {
-	names: 'Juan Carlos',
-	surnames: 'García Rodríguez',
-	background: backgroundDefault,
-	size: 25,
+	names: Data.names,
+	surnames: Data.surnames,
+	background: Data.background,
+	size: Data.size,
 }
 
 export const namesSlice = createSlice({
-	name: 'names',
+	name: Data.nameSlice,
 	initialState: initialState,
 	reducers: {
 		renameNames: (state, action: PayloadAction<string>) => {

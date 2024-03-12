@@ -7,11 +7,11 @@ import {
 } from '../../store/user/namesSlice'
 
 import { capitalize } from '../utils/functions'
-import { backgroundNames } from '../utils/selectColors'
+import { backgroundNames, sizeNames } from '../utils/dataForNames'
 
 // import components
-import { IconText, IconPainText, IconTextSize } from './IconsSVG'
 import InputText from './InputText'
+import { IconText, IconPainText, IconTextSize } from './IconsSVG'
 
 export default function ControlNames() {
 	const storeNames = useAppSelector((state) => state.storeNames)
@@ -70,6 +70,7 @@ export default function ControlNames() {
 				<IconTextSize size={21} />
 				<select
 					onChange={handleChangeSize}
+					value={storeNames.size}
 					style={{
 						textAlign: 'center',
 						borderRadius: 5,
@@ -78,15 +79,11 @@ export default function ControlNames() {
 						border: '1px solid var(--color-gray-300)',
 					}}
 				>
-					<option value="22">22</option>
-					<option value="24">24</option>
-					<option value="26" selected>
-						26
-					</option>
-					<option value="28">28</option>
-					<option value="30">30</option>
-					<option value="32">32</option>
-					<option value="34">34</option>
+					{sizeNames.map((item) => (
+						<option key={item.size} value={item.size}>
+							{item.size}
+						</option>
+					))}
 				</select>
 			</div>
 		</>
