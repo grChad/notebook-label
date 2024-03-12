@@ -1,23 +1,9 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { dataNamesDefault as Data } from '../../src/utils/dataForNames'
-
-export interface User {
-	names: string
-	surnames: string
-	background: string
-	size: number
-}
-
-const initialState: User = {
-	names: Data.names,
-	surnames: Data.surnames,
-	background: Data.background,
-	size: Data.size,
-}
+import { dataNamesDefault, nameSlice } from '../../src/utils/dataForNames'
 
 export const namesSlice = createSlice({
-	name: Data.nameSlice,
-	initialState: initialState,
+	name: nameSlice,
+	initialState: dataNamesDefault,
 	reducers: {
 		renameNames: (state, action: PayloadAction<string>) => {
 			state.names = action.payload

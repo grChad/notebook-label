@@ -1,21 +1,9 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { colorTextCurseDefault as colorDefault } from '../../src/utils/selectColors'
-
-export interface User {
-	curse: string
-	color: string
-	size: number
-}
-
-const initialState: User = {
-	curse: 'Matemática',
-	color: colorDefault,
-	size: 70,
-}
+import { dataCurseDefault, nameSlice } from '../../src/utils/dataForCurse'
 
 export const curseSlice = createSlice({
-	name: 'curse',
-	initialState: initialState,
+	name: nameSlice,
+	initialState: dataCurseDefault,
 	reducers: {
 		renameCurse: (state, action: PayloadAction<string>) => {
 			state.curse = action.payload

@@ -1,12 +1,12 @@
 import type { DataNamesDefault, ListColorText, ListSizeText } from './types'
 
 export const dataNamesDefault: DataNamesDefault = {
-	nameSlice: 'names',
 	names: 'Juan Carlos',
 	surnames: 'García Rodríguez',
 	background: '#7dd3fc88',
 	size: 26,
 }
+export const nameSlice: string = 'names'
 
 export const backgroundNames: ListColorText[] = [
 	{ id: crypto.randomUUID(), name: 'stone', color: '#d6d3d188' },

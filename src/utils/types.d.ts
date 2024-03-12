@@ -5,7 +5,6 @@ export interface DateCurseDefault {
 }
 
 export interface DataNamesDefault {
-	nameSlice: string
 	names: string
 	surnames: string
 	background: string

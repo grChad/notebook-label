@@ -5,6 +5,7 @@ export const dataCurseDefault: DateCurseDefault = {
 	color: '#0ea5e9',
 	size: 70,
 }
+export const nameSlice: string = 'curse'
 
 export const colorTextCurse: ListColorText[] = [
 	{ id: crypto.randomUUID(), name: 'stone', color: '#78716c' },
