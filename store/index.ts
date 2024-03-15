@@ -1,15 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
-import userSlice from './user/slice'
 import selectSlice from './user/selectSlice'
 import curseSlice from './user/curseSlice'
 import namesSlice from './user/namesSlice'
+import classroomSlice from './user/classroomSlice'
 
 export const store = configureStore({
 	reducer: {
-		names: userSlice,
 		selectElement: selectSlice,
 		storeCurse: curseSlice,
 		storeNames: namesSlice,
+		storeClassroom: classroomSlice,
 	},
 })
 
