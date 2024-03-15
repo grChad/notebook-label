@@ -1,26 +1,28 @@
-import { useAppSelector } from '../hooks/store'
-
 // FIXME: revisar el css
 import styles from '../styles/barControl.module.css'
+import { useAppSelector } from '../hooks/store'
+
+import { DataSelectElement as data } from '../utils/configs'
 
 // import components
 import ControlCurse from './ControlCurse'
 import ControlNames from './ControlNames'
-
-import { DataSelectElement as data } from '../utils/configs'
+import ControlClassroom from './ControlClassroom'
 
 export default function BarrControl() {
-	const selectElement = useAppSelector((state) => state.selectElement)
+	const { itemSelected } = useAppSelector((state) => state.selectElement)
+	const { curse, names, classroom } = data
 
 	return (
 		<div className={styles.barUp}>
-			{selectElement.itemSelected === '' && (
+			{itemSelected === '' && (
 				<div>
 					<p>Selecciona un elemento para editar</p>
 				</div>
 			)}
-			{selectElement.itemSelected === data.curse && <ControlCurse />}
-			{selectElement.itemSelected === data.names && <ControlNames />}
+			{itemSelected === curse && <ControlCurse />}
+			{itemSelected === names && <ControlNames />}
+			{itemSelected === classroom && <ControlClassroom />}
 		</div>
 	)
 }
