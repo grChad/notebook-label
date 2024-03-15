@@ -44,8 +44,11 @@ export default function ControlNames() {
 		<>
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconText size={18} />
-				<InputText name={storeNames.names} changeName={handleChangeNames} />
-				<InputText name={storeNames.surnames} changeName={handleChangeSurnames} />
+				<InputText valueInput={storeNames.names} onChangeInput={handleChangeNames} />
+				<InputText
+					valueInput={storeNames.surnames}
+					onChangeInput={handleChangeSurnames}
+				/>
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">
@@ -60,8 +63,8 @@ export default function ControlNames() {
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconTextSize size={21} />
 				<SelectSize
-					size={storeNames.size}
-					handleChangeSize={handleChangeSize}
+					valueSelect={storeNames.size}
+					onChangeSelect={handleChangeSize}
 					dateList={sizeNames}
 				/>
 			</div>

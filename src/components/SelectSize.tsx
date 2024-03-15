@@ -1,16 +1,20 @@
 import { ListSizeText } from '../utils/types'
 
 interface Props {
-	size: number
-	handleChangeSize: (event: React.ChangeEvent<HTMLSelectElement>) => void
+	valueSelect: number
+	onChangeSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void
 	dateList: ListSizeText[]
 }
 
-export const SelectSize: React.FC<Props> = ({ size, handleChangeSize, dateList }) => {
+export const SelectSize: React.FC<Props> = ({
+	valueSelect,
+	onChangeSelect,
+	dateList,
+}) => {
 	return (
 		<select
-			onChange={handleChangeSize}
-			value={size}
+			onChange={onChangeSelect}
+			value={valueSelect}
 			style={{
 				textAlign: 'center',
 				borderRadius: 5,

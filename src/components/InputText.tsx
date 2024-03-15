@@ -1,15 +1,15 @@
-interface Props {
-	name: string
-	changeName: (event: React.ChangeEvent<HTMLInputElement>) => void
+interface InputProps {
+	valueInput: string
+	onChangeInput: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export const InputText: React.FC<Props> = ({ name, changeName }) => {
+export const InputText: React.FC<InputProps> = ({ valueInput, onChangeInput }) => {
 	return (
 		<input
 			type="text"
 			placeholder="Vacio"
-			value={name}
-			onChange={changeName}
+			value={valueInput}
+			onChange={onChangeInput}
 			style={{
 				width: 150,
 				textAlign: 'center',

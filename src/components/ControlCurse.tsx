@@ -35,7 +35,7 @@ export default function ControlsCurse() {
 		<>
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconText size={18} />
-				<InputText name={storeCurse.curse} changeName={changeCurse} />
+				<InputText valueInput={storeCurse.curse} onChangeInput={changeCurse} />
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">
@@ -50,8 +50,8 @@ export default function ControlsCurse() {
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconTextSize size={21} />
 				<SelectSize
-					size={storeCurse.size}
-					handleChangeSize={handleChangeSize}
+					valueSelect={storeCurse.size}
+					onChangeSelect={handleChangeSize}
 					dateList={sizeCurse}
 				/>
 			</div>
