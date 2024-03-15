@@ -11,6 +11,13 @@ export interface DataNamesDefault {
 	size: number
 }
 
+export interface DataClassroomDefault {
+	className: string
+	background: string
+	color: string
+	size: number
+}
+
 export interface ListColorText {
 	id: string
 	name: string
