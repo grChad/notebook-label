@@ -11,7 +11,7 @@ export default function ViewNames() {
 	}
 
 	return (
-		<div className="relative h-40">
+		<div className="relative h-[122px]">
 			<button
 				style={{
 					position: 'absolute',

@@ -1,19 +1,41 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // import Image
-import Logo from '../assets/scorza03.png'
+import DEFAULT_LOGO from '../assets/scorza03.png'
 
 export default function ViewLogo() {
-	const [isHovered, setIsHovered] = useState(false)
+	const inputRef = useRef<HTMLInputElement>(null)
+	const [image, setImage] = useState('')
+
+	const handleClick = () => inputRef.current?.click()
+
+	const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { files } = event.target
+		if (!files || files.length === 0) {
+			throw new Error('Failed to find root element')
+		}
+		const file = files[0]
+		const imageUrl = URL.createObjectURL(file)
+		setImage(imageUrl)
+	}
+
+	useEffect(() => {
+		return () => {
+			// revocar URL, para evitar fuga de memoria.
+			if (image) {
+				URL.revokeObjectURL(image)
+			}
+		}
+	}, [image])
 
 	return (
-		<button
-			type="button"
-			onMouseEnter={() => setIsHovered(true)}
-			onMouseLeave={() => setIsHovered(false)}
-			style={{ ...styles.button, ...(isHovered && { borderColor: '#D3D3D3' }) }}
-		>
-			<img style={styles.image} src={Logo} alt="marianista" />
+		<button type="button" style={styles.button} onClick={handleClick}>
+			{image ? (
+				<img style={styles.image} src={image} alt="logo" />
+			) : (
+				<img src={DEFAULT_LOGO} alt="logo" />
+			)}
+			<input type="file" ref={inputRef} onChange={onChange} style={{ display: 'none' }} />
 		</button>
 	)
 }
@@ -22,6 +44,7 @@ const styles = {
 	button: {
 		width: 80,
 		height: 80,
+		overflow: 'hidden',
 	},
 	image: {
 		width: '100%',

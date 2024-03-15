@@ -18,10 +18,10 @@ export default function ViewCurse() {
 					color: `${storeCurse.color}`,
 					fontSize: `${storeCurse.size}px`,
 					textShadow: `
-            1px 1px 2px var(--color-mantle),
-            -1px -1px 2px var(--color-mantle),
-            -1px 1px 2px var(--color-mantle),
-            1px -1px 2px var(--color-mantle)`,
+            1px 1px var(--color-mantle),
+            -1px -1px var(--color-mantle),
+            -1px 1px var(--color-mantle),
+            1px -1px var(--color-mantle)`,
 				}}
 			>
 				{storeCurse.curse === '' ? '...?' : storeCurse.curse}
