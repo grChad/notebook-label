@@ -11,6 +11,10 @@ export const namesSlice = createSlice({
 		renameSurnames: (state, action: PayloadAction<string>) => {
 			state.surnames = action.payload
 		},
+
+		changeFont: (state, action: PayloadAction<string>) => {
+			state.font = action.payload
+		},
 		changeBackground: (state, action: PayloadAction<string>) => {
 			state.background = action.payload
 		},
@@ -21,5 +25,5 @@ export const namesSlice = createSlice({
 })
 
 export default namesSlice.reducer
-export const { renameNames, renameSurnames, changeBackground, changeSize } =
+export const { renameNames, renameSurnames, changeFont, changeBackground, changeSize } =
 	namesSlice.actions

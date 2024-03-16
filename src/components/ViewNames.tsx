@@ -20,6 +20,7 @@ export default function ViewNames() {
 					display: 'flex',
 					flexDirection: 'column',
 					borderRadius: 5,
+					fontFamily: `${storeNames.font}`,
 					padding: '8px 12px',
 					backgroundColor: `${storeNames.background}`,
 				}}

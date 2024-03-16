@@ -1,12 +1,22 @@
-import type { DataNamesDefault, ListColorText, ListSizeText } from './types'
+import type { DataNamesDefault, ListFonts, ListColorText, ListSizeText } from './types'
 
 export const dataNamesDefault: DataNamesDefault = {
 	names: 'Juan Carlos',
 	surnames: 'García Rodríguez',
+	font: 'system-ui',
 	background: '#7dd3fc88',
 	size: 26,
 }
 export const nameSlice: string = 'names'
+
+export const fontName: ListFonts[] = [
+	{ name: 'system', font: 'system-ui' },
+	{ name: 'Sans', font: 'sans-serif' },
+	{ name: 'Asap', font: 'Asap' },
+	{ name: 'Comic', font: 'ComicNeue' },
+	{ name: 'Mono1', font: 'Liberation Mono' },
+	{ name: 'Mono2', font: 'monospace' },
+]
 
 export const backgroundNames: ListColorText[] = [
 	{ id: crypto.randomUUID(), name: 'stone', color: '#d6d3d188' },
