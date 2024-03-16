@@ -4,6 +4,7 @@ import { DataSelectElement as Data } from '../utils/configs'
 
 export default function ViewClassroom() {
 	const storeClass = useAppSelector((store) => store.storeClassroom)
+	const storeName = useAppSelector((store) => store.storeNames)
 	const dispatch = useAppDispatch()
 
 	const handleClick = () => {
@@ -16,6 +17,7 @@ export default function ViewClassroom() {
 				<span
 					style={{
 						fontWeight: 'bold',
+						fontFamily: `${storeName.font}`,
 						marginRight: 5,
 						fontSize: `${storeClass.size}px`,
 					}}
@@ -24,6 +26,7 @@ export default function ViewClassroom() {
 				</span>
 				<span
 					style={{
+						fontFamily: `${storeClass.font}`,
 						fontWeight: 'bold',
 						paddingInline: 10,
 						borderRadius: 3,

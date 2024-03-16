@@ -1,12 +1,27 @@
-import type { DataClassroomDefault, ListColorText, ListSizeText } from './types'
+import type {
+	DataClassroomDefault,
+	ListColorText,
+	ListFonts,
+	ListSizeText,
+} from './types'
 
 export const dataClassroomDefault: DataClassroomDefault = {
 	className: 'Perú',
+	font: 'Asap',
 	background: '#ef4444',
 	color: '#ffffff',
 	size: 26,
 }
 export const nameSlice: string = 'classroom'
+
+export const fontClassroom: ListFonts[] = [
+	{ name: 'system', font: 'system-ui' },
+	{ name: 'Sans', font: 'sans-serif' },
+	{ name: 'Asap', font: 'Asap' },
+	{ name: 'Comic', font: 'ComicNeue' },
+	{ name: 'Mono1', font: 'Liberation Mono' },
+	{ name: 'Mono2', font: 'monospace' },
+]
 
 export const colorTextClassroom: ListColorText[] = [
 	{ id: crypto.randomUUID(), name: 'white', color: '#ffffff' },

@@ -8,6 +8,9 @@ export const classroomSlice = createSlice({
 		renameClass: (state, action: PayloadAction<string>) => {
 			state.className = action.payload
 		},
+		changeFont: (state, action: PayloadAction<string>) => {
+			state.font = action.payload
+		},
 		changeBackground: (state, action: PayloadAction<string>) => {
 			state.background = action.payload
 		},
@@ -21,5 +24,5 @@ export const classroomSlice = createSlice({
 })
 
 export default classroomSlice.reducer
-export const { renameClass, changeBackground, changeColor, changeSize } =
+export const { renameClass, changeFont, changeBackground, changeColor, changeSize } =
 	classroomSlice.actions

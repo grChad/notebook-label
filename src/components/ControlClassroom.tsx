@@ -2,6 +2,7 @@
 import { useAppSelector, useAppDispatch } from '../hooks/store'
 import {
 	renameClass,
+	changeFont,
 	changeColor,
 	changeBackground,
 	changeSize,
@@ -9,13 +10,18 @@ import {
 
 // NOTE: function and data
 import { capitalize } from '../utils/functions'
-import { colorTextClassroom, sizeClassroom } from '../utils/dataForClassroom'
+import {
+	colorTextClassroom,
+	sizeClassroom,
+	fontClassroom,
+} from '../utils/dataForClassroom'
 
 // import components
 import InputText from './InputText'
 import SelectSize from './SelectSize'
 import SelectColor from './SelectColor'
-import { IconText, IconPainText, IconBrush, IconTextSize } from './IconsSVG'
+import SelectFont from './SelectFont'
+import { IconText, IconFont, IconPainText, IconBrush, IconTextSize } from './IconsSVG'
 
 export default function ControlClassroom() {
 	const storeClassroom = useAppSelector((state) => state.storeClassroom)
@@ -24,6 +30,11 @@ export default function ControlClassroom() {
 	const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const value = capitalize(event.target.value)
 		dispatch(renameClass(value))
+	}
+
+	const handleChangeFont = (event: React.ChangeEvent<HTMLSelectElement>) => {
+		const valueFont = event.target.value
+		dispatch(changeFont(valueFont))
 	}
 
 	const handleChangeColor = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -48,6 +59,15 @@ export default function ControlClassroom() {
 				<InputText
 					valueInput={storeClassroom.className}
 					onChangeInput={handleChangeName}
+				/>
+			</div>
+
+			<div className="flex flex-row justify-center items-center gap-1">
+				<IconFont size={18} />
+				<SelectFont
+					onChangeSelect={handleChangeFont}
+					valueSelect={storeClassroom.font}
+					dateList={fontClassroom}
 				/>
 			</div>
 
