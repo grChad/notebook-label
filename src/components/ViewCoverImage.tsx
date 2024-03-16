@@ -31,9 +31,19 @@ export default function ViewCoverImage() {
 	return (
 		<button type="button" style={styles.button} onClick={handleClick}>
 			{image ? (
-				<img style={styles.image} src={image} alt="logo" />
+				<img
+					style={styles.image}
+					src={image}
+					alt="Imagen de Portada"
+					title="Imagen de Portada"
+				/>
 			) : (
-				<img src={DEFAULT_IMAGE} alt="logo" />
+				<img
+					style={styles.image}
+					src={DEFAULT_IMAGE}
+					alt="Imagen de Portada"
+					title="Imagen de Portada"
+				/>
 			)}
 			<input type="file" ref={inputRef} onChange={onChange} style={{ display: 'none' }} />
 		</button>

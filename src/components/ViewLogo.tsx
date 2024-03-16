@@ -31,9 +31,9 @@ export default function ViewLogo() {
 	return (
 		<button type="button" style={styles.button} onClick={handleClick}>
 			{image ? (
-				<img style={styles.image} src={image} alt="logo" />
+				<img style={styles.image} src={image} alt="Logo" title="Logo" />
 			) : (
-				<img src={DEFAULT_LOGO} alt="logo" />
+				<img src={DEFAULT_LOGO} alt="Logo" title="Logo" />
 			)}
 			<input type="file" ref={inputRef} onChange={onChange} style={{ display: 'none' }} />
 		</button>
