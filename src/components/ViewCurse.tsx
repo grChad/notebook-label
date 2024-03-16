@@ -16,6 +16,7 @@ export default function ViewCurse() {
 				className="absolute inset-0 font-bold leading-[1]"
 				style={{
 					color: `${storeCurse.color}`,
+					fontFamily: `${storeCurse.font}`,
 					fontSize: `${storeCurse.size}px`,
 					textShadow: `
             1px 1px var(--color-mantle),

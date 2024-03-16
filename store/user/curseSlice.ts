@@ -8,6 +8,9 @@ export const curseSlice = createSlice({
 		renameCurse: (state, action: PayloadAction<string>) => {
 			state.curse = action.payload
 		},
+		changeFont: (state, action: PayloadAction<string>) => {
+			state.font = action.payload
+		},
 		changeColor: (state, action: PayloadAction<string>) => {
 			state.color = action.payload
 		},
@@ -18,4 +21,4 @@ export const curseSlice = createSlice({
 })
 
 export default curseSlice.reducer
-export const { renameCurse, changeColor, changeSize } = curseSlice.actions
+export const { renameCurse, changeFont, changeColor, changeSize } = curseSlice.actions

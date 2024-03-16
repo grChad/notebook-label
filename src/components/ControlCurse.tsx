@@ -1,16 +1,22 @@
 // NOTE: Global State
 import { useAppSelector, useAppDispatch } from '../hooks/store'
-import { renameCurse, changeColor, changeSize } from '../../store/user/curseSlice'
+import {
+	renameCurse,
+	changeFont,
+	changeColor,
+	changeSize,
+} from '../../store/user/curseSlice'
 
 // NOTE: function and data
 import { capitalize } from '../utils/functions'
-import { colorTextCurse, sizeCurse } from '../utils/dataForCurse'
+import { colorTextCurse, fontCurse, sizeCurse } from '../utils/dataForCurse'
 
 // import components
 import InputText from './InputText'
 import SelectSize from './SelectSize'
 import SelectColor from './SelectColor'
-import { IconText, IconPainText, IconTextSize } from './IconsSVG'
+import SelectFont from './SelectFont'
+import { IconText, IconFont, IconPainText, IconTextSize } from './IconsSVG'
 
 export default function ControlsCurse() {
 	const storeCurse = useAppSelector((state) => state.storeCurse)
@@ -19,6 +25,10 @@ export default function ControlsCurse() {
 	const changeCurse = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const value = capitalize(event.target.value)
 		dispatch(renameCurse(value))
+	}
+	const handleChangeFont = (event: React.ChangeEvent<HTMLSelectElement>) => {
+		const valueFont = event.target.value
+		dispatch(changeFont(valueFont))
 	}
 
 	const handleChangeColor = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -36,6 +46,15 @@ export default function ControlsCurse() {
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconText size={18} />
 				<InputText valueInput={storeCurse.curse} onChangeInput={changeCurse} />
+			</div>
+
+			<div className="flex flex-row justify-center items-center gap-1">
+				<IconFont size={18} />
+				<SelectFont
+					onChangeSelect={handleChangeFont}
+					valueSelect={storeCurse.font}
+					dateList={fontCurse}
+				/>
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">

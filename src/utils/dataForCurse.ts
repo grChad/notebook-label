@@ -1,11 +1,21 @@
-import type { DateCurseDefault, ListColorText, ListSizeText } from './types'
+import type { DateCurseDefault, ListFonts, ListColorText, ListSizeText } from './types'
 
 export const dataCurseDefault: DateCurseDefault = {
 	curse: 'Matemática',
+	font: 'system-ui',
 	color: '#0ea5e9',
 	size: 70,
 }
 export const nameSlice: string = 'curse'
+
+export const fontCurse: ListFonts[] = [
+	{ name: 'system', font: 'system-ui' },
+	{ name: 'Sans', font: 'sans-serif' },
+	{ name: 'Asap', font: 'Asap' },
+	{ name: 'Comic', font: 'ComicNeue' },
+	{ name: 'Mono1', font: 'Liberation Mono' },
+	{ name: 'Mono2', font: 'monospace' },
+]
 
 export const colorTextCurse: ListColorText[] = [
 	{ id: crypto.randomUUID(), name: 'stone', color: '#78716c' },
