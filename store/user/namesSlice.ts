@@ -11,7 +11,6 @@ export const namesSlice = createSlice({
 		renameSurnames: (state, action: PayloadAction<string>) => {
 			state.surnames = action.payload
 		},
-
 		changeFont: (state, action: PayloadAction<string>) => {
 			state.font = action.payload
 		},
