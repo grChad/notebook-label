@@ -1,4 +1,4 @@
-import { ListFonts } from '../utils/types'
+import type { ListFonts } from '../utils/types'
 
 interface Props {
 	onChangeSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void
