@@ -1,27 +1,25 @@
-// NOTE: Global State
-import { useAppSelector, useAppDispatch } from '../hooks/store'
 import {
-	renameClass,
-	changeFont,
-	changeColor,
 	changeBackground,
+	changeColor,
+	changeFont,
 	changeSize,
+	renameClass,
 } from '../../store/user/classroomSlice'
+// NOTE: Global State
+import { useAppDispatch, useAppSelector } from '../hooks/store'
 
-// NOTE: function and data
-import { capitalize } from '../utils/functions'
 import {
 	colorTextClassroom,
-	sizeClassroom,
 	fontClassroom,
+	sizeClassroom,
 } from '../utils/dataForClassroom'
+// NOTE: function and data
+import { capitalize } from '../utils/functions'
 
 // import components
 import InputText from './InputText'
-import SelectSize from './SelectSize'
-import SelectColor from './SelectColor'
-import SelectFont from './SelectFont'
-import { IconText, IconFont, IconPainText, IconBrush, IconTextSize } from './IconsSVG'
+import SelectItems from './SelectItems'
+import { IconBrush, IconFont, IconPainText, IconText, IconTextSize } from './IconsSVG'
 
 export default function ControlClassroom() {
 	const storeClassroom = useAppSelector((state) => state.storeClassroom)
@@ -64,37 +62,38 @@ export default function ControlClassroom() {
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconFont size={18} />
-				<SelectFont
-					onChangeSelect={handleChangeFont}
+				<SelectItems
 					valueSelect={storeClassroom.font}
-					dateList={fontClassroom}
+					onChangeSelect={handleChangeFont}
+					listFonts={fontClassroom}
 				/>
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconPainText size={18} />
-				<SelectColor
-					handleChangeColor={handleChangeColor}
-					color={storeClassroom.color}
-					dateList={colorTextClassroom}
+				<SelectItems
+					valueSelect={storeClassroom.color}
+					onChangeSelect={handleChangeColor}
+					listColor={colorTextClassroom}
 				/>
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconBrush size={18} />
-				<SelectColor
-					handleChangeColor={handleChangeBg}
-					color={storeClassroom.background}
-					dateList={colorTextClassroom}
+				<SelectItems
+					valueSelect={storeClassroom.background}
+					onChangeSelect={handleChangeBg}
+					listColor={colorTextClassroom}
 				/>
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconTextSize size={21} />
-				<SelectSize
+				<SelectItems
 					valueSelect={storeClassroom.size}
 					onChangeSelect={handleChangeSize}
-					dateList={sizeClassroom}
+					listSize={sizeClassroom}
+					isSmall={true}
 				/>
 			</div>
 		</>

@@ -21,17 +21,20 @@ export interface DataClassroomDefault {
 	size: number
 }
 
-export interface ListColorText {
+export interface ListColors {
 	id: string
 	name: string
-	color: string
+	value: string
 }
 
-export interface ListSizeText {
-	size: number
+export interface ListSizes {
+	id: string
+	name: string
+	value: number
 }
 
 export interface ListFonts {
+	id: string
 	name: string
-	font: string
+	value: string
 }

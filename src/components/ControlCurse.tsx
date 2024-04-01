@@ -13,9 +13,7 @@ import { colorTextCurse, fontCurse, sizeCurse } from '../utils/dataForCurse'
 
 // import components
 import InputText from './InputText'
-import SelectSize from './SelectSize'
-import SelectColor from './SelectColor'
-import SelectFont from './SelectFont'
+import SelectItems from './SelectItems'
 import { IconText, IconFont, IconPainText, IconTextSize } from './IconsSVG'
 
 export default function ControlsCurse() {
@@ -50,28 +48,29 @@ export default function ControlsCurse() {
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconFont size={18} />
-				<SelectFont
-					onChangeSelect={handleChangeFont}
+				<SelectItems
 					valueSelect={storeCurse.font}
-					dateList={fontCurse}
+					onChangeSelect={handleChangeFont}
+					listFonts={fontCurse}
 				/>
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconPainText size={18} />
-				<SelectColor
-					handleChangeColor={handleChangeColor}
-					color={storeCurse.color}
-					dateList={colorTextCurse}
+				<SelectItems
+					valueSelect={storeCurse.color}
+					onChangeSelect={handleChangeColor}
+					listColor={colorTextCurse}
 				/>
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconTextSize size={21} />
-				<SelectSize
+				<SelectItems
 					valueSelect={storeCurse.size}
 					onChangeSelect={handleChangeSize}
-					dateList={sizeCurse}
+					listSize={sizeCurse}
+					isSmall={true}
 				/>
 			</div>
 		</>

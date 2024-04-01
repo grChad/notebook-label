@@ -14,9 +14,7 @@ import { backgroundNames, fontName, sizeNames } from '../utils/dataForNames'
 
 // import components
 import InputText from './InputText'
-import SelectSize from './SelectSize'
-import SelectColor from './SelectColor'
-import SelectFont from './SelectFont'
+import SelectItems from './SelectItems'
 import { IconText, IconFont, IconBrush, IconTextSize } from './IconsSVG'
 
 export default function ControlNames() {
@@ -60,28 +58,29 @@ export default function ControlNames() {
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconFont size={18} />
-				<SelectFont
-					onChangeSelect={handleChangeFont}
+				<SelectItems
 					valueSelect={storeNames.font}
-					dateList={fontName}
+					onChangeSelect={handleChangeFont}
+					listFonts={fontName}
 				/>
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconBrush size={18} />
-				<SelectColor
-					handleChangeColor={handleChangeColor}
-					color={storeNames.background}
-					dateList={backgroundNames}
+				<SelectItems
+					valueSelect={storeNames.background}
+					onChangeSelect={handleChangeColor}
+					listColor={backgroundNames}
 				/>
 			</div>
 
 			<div className="flex flex-row justify-center items-center gap-1">
 				<IconTextSize size={21} />
-				<SelectSize
+				<SelectItems
 					valueSelect={storeNames.size}
 					onChangeSelect={handleChangeSize}
-					dateList={sizeNames}
+					listSize={sizeNames}
+					isSmall={true}
 				/>
 			</div>
 		</>
