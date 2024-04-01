@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 
-// import Image
-import DEFAULT_LOGO from '../assets/scorza03.png'
+interface Props {
+	size: number
+	default_image: string
+	alt: string
+}
 
-export default function ViewLogo() {
+const ViewLogo: React.FC<Props> = ({ size, default_image, alt }) => {
 	const inputRef = useRef<HTMLInputElement>(null)
 	const [image, setImage] = useState('')
 
@@ -29,25 +32,24 @@ export default function ViewLogo() {
 	}, [image])
 
 	return (
-		<button type="button" style={styles.button} onClick={handleClick}>
+		<button
+			type="button"
+			style={{ width: size, height: size, overflow: 'hidden' }}
+			onClick={handleClick}
+		>
 			{image ? (
-				<img style={styles.image} src={image} alt="Logo" title="Logo" />
+				<img
+					style={{ width: '100%', height: '100%' }}
+					src={image}
+					alt={alt}
+					title={alt}
+				/>
 			) : (
-				<img src={DEFAULT_LOGO} alt="Logo" title="Logo" />
+				<img src={default_image} alt={alt} title={alt} />
 			)}
 			<input type="file" ref={inputRef} onChange={onChange} style={{ display: 'none' }} />
 		</button>
 	)
 }
 
-const styles = {
-	button: {
-		width: 80,
-		height: 80,
-		overflow: 'hidden',
-	},
-	image: {
-		width: '100%',
-		height: '100%',
-	},
-}
+export default ViewLogo
