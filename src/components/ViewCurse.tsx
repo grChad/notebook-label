@@ -11,9 +11,13 @@ export default function ViewCurse() {
 	}
 
 	return (
-		<button type="button" style={{ position: 'relative' }} onClick={handlePress}>
+		<button
+			type="button"
+			className="w-full h-full flex justify-center items-center"
+			onClick={handlePress}
+		>
 			<h2
-				className="absolute inset-0 font-bold leading-[1]"
+				className="inset-0 font-bold leading-[1]"
 				style={{
 					color: `${storeCurse.color}`,
 					fontFamily: `${storeCurse.font}`,
