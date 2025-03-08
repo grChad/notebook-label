@@ -39,7 +39,7 @@ const ViewLogo: React.FC<Props> = ({ size, default_image, alt }) => {
 		>
 			{image ? (
 				<img
-					style={{ width: '100%', height: '100%' }}
+					style={{ width: '100%', height: '100%', objectFit: 'contain' }}
 					src={image}
 					alt={alt}
 					title={alt}
