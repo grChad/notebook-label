@@ -14,3 +14,9 @@
   padding: 5px 1rem;
   background-color: var(--color-gray);
 }
+
+@media print {
+  .barUp {
+    visibility: hidden;
+  }
+}
